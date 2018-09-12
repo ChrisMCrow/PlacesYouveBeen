@@ -1,6 +1,7 @@
 using Microsoft.AspNetCore.Mvc;
-using PlacesYouveBeen.Models;
+using System;
 using System.Collections.Generic;
+using PlacesYouveBeen.Models;
 
 namespace PlacesYouveBeen.Controllers
 {
@@ -23,7 +24,6 @@ namespace PlacesYouveBeen.Controllers
         public ActionResult Create()
         {
           Place newPlace = new Place(Request.Form["city"]);
-          //set all other form inputs to the object
           newPlace.SetDuration(Request.Form["duration"]);
           newPlace.SetCountry(Request.Form["country"]);
           newPlace.SetActivities(Request.Form["activities"]);

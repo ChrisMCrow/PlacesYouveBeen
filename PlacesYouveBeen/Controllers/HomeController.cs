@@ -10,6 +10,5 @@ namespace PlacesYouveBeen.Controllers
         {
             return View();
         }
-
     }
 }

@@ -18,7 +18,6 @@ namespace PlacesYouveBeen.Models
             _places.Add(this);
             _id = _places.Count;
         }
-        // public string _city {get; set;}      <-look this up someday
         public string GetCity()
         {
             return _city;

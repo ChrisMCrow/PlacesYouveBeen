@@ -1,3 +1,5 @@
+@using PlacesYouveBeen.Models;
+
 <!DOCTYPE html>
 <html>
   <head>
@@ -7,13 +9,11 @@
   <body>
     <div class="container">
       <h1 class="jumbotron">Places You've Been</h1>
-      <ul>
-        @foreach(var place in Model)
-        {
-          <li><a href="places/@place.GetId()">@place.GetCity()</a></li>
-        }
-      </ul>
-      <a href="/places/new"><button class="btn btn-info">Add a new place!</button></a>
+      @foreach(Place place in Model)
+      {
+        <h3><a href='places/@place.GetId()'>@place.GetCity()</a></h3>
+      }
+      <a href='/places/new'><button class='btn btn-info'>Add a new place!</button></a>
     </div>
   </body>
 </html>
