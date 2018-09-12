@@ -9,12 +9,14 @@ namespace PlacesYouveBeen.Models
         private string _duration;
         private string _country;
         private string _activities;
+        private int _id;
         private static List<Place> _places = new List<Place> {};
 
         public Place(string city)
         {
             _city = city;
             _places.Add(this);
+            _id = _places.Count;
         }
         // public string _city {get; set;}      <-look this up someday
         public string GetCity()
@@ -44,6 +46,14 @@ namespace PlacesYouveBeen.Models
         public string GetActivities()
         {
             return _activities;
+        }
+        public int GetId()
+        {
+            return _id;
+        }
+        public static Place Find(int searchId)
+        {
+            return _places[searchId - 1];
         }
         public static List<Place> GetAll()
         {
